@@ -1,0 +1,46 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'us-central1-docker.pkg.dev/arctic-anvil-476315-v3/jiq25-landingpage/jiq25-landingpage:$COMMIT_SHA',
+        '.',
+      ]
+
+  # Push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'us-central1-docker.pkg.dev/arctic-anvil-476315-v3/jiq25-landingpage/jiq25-landingpage:$COMMIT_SHA',
+      ]
+
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      [
+        'run',
+        'deploy',
+        'demo-jiq2025-landingpage',
+        '--image',
+        'us-central1-docker.pkg.dev/arctic-anvil-476315-v3/jiq25-landingpage/jiq25-landingpage:$COMMIT_SHA',
+        '--region',
+        'us-central1',
+        '--platform',
+        'managed',
+        '--ingress',
+        'internal-and-cloud-load-balancing',
+        '--port',
+        '8080',
+        '--no-invoker-iam-check',
+        '--service-account',
+        'cloud-run@arctic-anvil-476315-v3.iam.gserviceaccount.com',
+      ]
+images:
+  - 'us-central1-docker.pkg.dev/arctic-anvil-476315-v3/jiq25-landingpage/jiq25-landingpage:$COMMIT_SHA'
+serviceAccount: 'cloud-build@arctic-anvil-476315-v3.iam.gserviceaccount.com'
+options:
+  logging: CLOUD_LOGGING_ONLY
