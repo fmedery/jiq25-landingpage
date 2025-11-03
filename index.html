@@ -6,16 +6,20 @@
     <title>Past Forward</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Google Font (Inter) -->
+    <!-- Load Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Raleway:wght@400&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Use Inter font family */
+        /* Font definitions */
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-raleway { font-family: 'Raleway', sans-serif; }
+
+        /* Use Roboto font family by default */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto', sans-serif;
             /* Light background */
-            background-color: #f7fafc; 
+            background-color: #f7fafc;
             /* Add relative positioning for the lang toggle */
             position: relative;
         }
@@ -107,23 +111,23 @@
 
     <!-- Main container -->
     <!-- Reduced vertical padding from p-6 md:p-12 to py-8 px-6 -->
-    <div class="flex flex-col items-center justify-center min-h-screen py-8 px-6 text-center">
+    <div class="flex flex-col items-center justify-center min-h-screen py-8 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto">
 
         <!-- App Title -->
         <!-- Reduced bottom margin from mb-4 to mb-2 -->
-        <h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 title-gradient mb-2" data-key="title">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 title-gradient mb-2 font-orbitron" data-key="title">
             <!-- This text will be set by JS -->
         </h1>
 
         <!-- Tagline -->
         <!-- Reduced font size and bottom margin -->
-        <p class="text-xl md:text-2xl text-slate-600 mb-8 max-w-2xl" data-key="tagline">
+        <p class="text-lg sm:text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl font-raleway" data-key="tagline">
             <!-- This text will be set by JS -->
         </p>
 
         <!-- Image Placeholder Grid -->
         <!-- Reduced gap and bottom margin -->
-        <div class="grid grid-cols-3 gap-2 md:gap-4 mb-8 max-w-3xl w-full">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 max-w-4xl w-full">
             
             <!-- 1930s Box -->
             <div class="era-box rounded-lg shadow-xl">
@@ -177,13 +181,13 @@
 
         <!-- How It Works Section -->
         <!-- Reduced gap and bottom margin -->
-        <div class="flex flex-col md:flex-row gap-4 max-w-5xl w-full mb-8">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-6 max-w-5xl w-full mb-8">
             
             <!-- Step 1 -->
             <!-- Reduced padding, step number size, and title size -->
-            <div class="flex-1 bg-white p-4 rounded-xl shadow-lg border border-slate-200">
-                <span class="text-5xl font-black text-cyan-400 block mb-1">1.</span>
-                <h2 class="text-xl font-bold mb-1 text-slate-900" data-key="step1Title">
+            <div class="flex-1 bg-white p-4 md:p-6 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-4xl md:text-5xl font-black text-cyan-400 block mb-1">1.</span>
+                <h2 class="text-lg md:text-xl font-bold mb-1 text-slate-900" data-key="step1Title">
                     <!-- This text will be set by JS -->
                 </h2>
                 <!-- Changed text-slate-400 to text-slate-600 -->
@@ -194,9 +198,9 @@
 
             <!-- Step 2 -->
             <!-- Reduced padding, step number size, and title size -->
-            <div class="flex-1 bg-white p-4 rounded-xl shadow-lg border border-slate-200">
-                <span class="text-5xl font-black text-cyan-400 block mb-1">2.</span>
-                <h2 class="text-xl font-bold mb-1 text-slate-900" data-key="step2Title">
+            <div class="flex-1 bg-white p-4 md:p-6 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-4xl md:text-5xl font-black text-cyan-400 block mb-1">2.</span>
+                <h2 class="text-lg md:text-xl font-bold mb-1 text-slate-900" data-key="step2Title">
                     <!-- This text will be set by JS -->
                 </h2>
                 <p class="text-slate-600" data-key="step2Text">
@@ -206,9 +210,9 @@
 
             <!-- Step 3 -->
             <!-- Reduced padding, step number size, and title size -->
-            <div class="flex-1 bg-white p-4 rounded-xl shadow-lg border border-slate-200">
-                <span class="text-5xl font-black text-cyan-400 block mb-1">3.</span>
-                <h2 class="text-xl font-bold mb-1 text-slate-900" data-key="step3Title">
+            <div class="flex-1 bg-white p-4 md:p-6 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-4xl md:text-5xl font-black text-cyan-400 block mb-1">3.</span>
+                <h2 class="text-lg md:text-xl font-bold mb-1 text-slate-900" data-key="step3Title">
                     <!-- This text will be set by JS -->
                 </h2>
                 <p class="text-slate-600" data-key="step3Text">
@@ -220,13 +224,13 @@
         <!-- Fake QR Code Image -->
         <!-- Reduced size and bottom margin -->
         <div class="mb-6">
-            <img src="assets/qrcode.png" alt="QR Code" class="w-48 h-48 rounded-lg shadow-lg mx-auto border-4 border-white">
+            <img src="assets/qrcode.png" alt="QR Code" class="w-32 h-32 sm:w-48 sm:h-48 rounded-lg shadow-lg mx-auto border-4 border-white">
         </div>
 
         <!-- Call to Action (Pulsing) -->
         <div class="w-full max-w-md">
             <!-- Reduced font size and padding -->
-            <div class="bg-cyan-400 text-white font-bold text-2xl py-4 px-8 rounded-full shadow-2xl animate-pulse" data-key="cta">
+            <div class="bg-cyan-400 text-white font-bold text-xl sm:text-2xl py-3 sm:py-4 px-6 sm:px-8 rounded-full shadow-2xl animate-pulse" data-key="cta">
                 <!-- This text will be set by JS -->
             </div>
         </div>
@@ -248,7 +252,7 @@
         const translations = {
             fr: {
                 title: "Passé Recomposé",
-                tagline: "Voyez-vous à six époques différentes.",
+                tagline: "Voyagez dans le temps avec un selfie",
                 era1930: "Années 30",
                 era1950: "Années 50",
                 era1970: "Années 70",
@@ -259,7 +263,7 @@
                 step1Text: "Utilisez la caméra de votre téléphone pour scanner le code QR ci-dessous.",
                 step2Title: "Prenez un selfie",
                 step2Text: "L'application web s'ouvrira. Suivez les instructions pour prendre une photo.",
-                step3Title: "Recevez vos photos",
+                step3Title: "télécharger vos photos",
                 step3Text: "Recevez 6 images uniques de vous dans le passé et téléchargez vos favorites.",
                 cta: "Scannez le code QR pour commencer !",
                 builtWith: "Créé avec ❤️ par",
@@ -267,7 +271,7 @@
             },
             en: {
                 title: "Past Forward",
-                tagline: "See yourself in six different eras.",
+                tagline: "See yourself reimagined in the iconic styles of past decades.",
                 era1930: "1930s",
                 era1950: "1950s",
                 era1970: "1970s",
@@ -278,7 +282,7 @@
                 step1Text: "Use your phone's camera to scan the QR code below.",
                 step2Title: "Take a Selfie",
                 step2Text: "The web app will open on your phone. Just follow the prompt to take one photo.",
-                step3Title: "Get Your Photos",
+                step3Title: "Download Your Photos",
                 step3Text: "Receive 6 unique images of yourself from the past and download your favorites.",
                 cta: "Scan the QR Code to Start!",
                 builtWith: "Built with ❤️ by",
