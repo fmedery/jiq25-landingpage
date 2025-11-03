@@ -19,3 +19,7 @@ This is a single-page web application built with vanilla HTML, CSS, and JavaScri
 ## Assets
 
 - **Google Logo**: The Google logo is the official logo and should not be replaced.
+
+## Deployment
+
+The application is deployed to Cloud Run using a `cloudbuild.yaml` file. The `Dockerfile` builds an Nginx image that serves the static content of the website. The `nginx.conf` file configures Nginx to listen on port 8080 and serve the `index.html` file as the root.
