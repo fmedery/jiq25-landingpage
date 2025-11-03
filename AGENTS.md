@@ -1,0 +1,17 @@
+# AGENTS.md
+
+This file provides guidance to agents when working with code in this repository.
+
+## Project Overview
+
+This is a single-page web application built with vanilla HTML, CSS, and JavaScript. It uses Tailwind CSS loaded via a CDN. To run the project, simply open the `index.html` file in a web browser.
+
+## Key Patterns
+
+- **Language Translation**: The site supports English and French. Text content is managed within a `translations` object in the main script. To add or modify text, edit this object and use the `data-key` attribute on the corresponding HTML elements.
+- **Image Animation**: The images in the "era boxes" have a randomized animation start time. This is controlled by the `--start-delay` CSS custom property, which is set dynamically with JavaScript.
+
+## Development
+
+- **Dependencies**: All dependencies are loaded via CDNs in the `index.html` file. There is no package manager or build process.
+- **Styling**: Styling is done with Tailwind CSS and a few custom CSS rules in the `<style>` tag of the `index.html` file.

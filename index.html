@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Set default lang to French -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Forward</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Use Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Light background */
+            background-color: #f7fafc; 
+            /* Add relative positioning for the lang toggle */
+            position: relative;
+        }
+        /* Add a subtle gradient animation for the title */
+        .title-gradient {
+            background-size: 200% auto;
+            animation: gradient-flow 5s ease-in-out infinite;
+        }
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- New Animation Styles --- */
+
+        /* Container for the flipping images */
+        .era-box {
+            position: relative;
+            aspect-ratio: 1 / 1; /* Keep it square */
+            overflow: hidden; /* Hide images outside the box */
+            /* Light background fallback */
+            background-color: #e2e8f0; 
+        }
+
+        /* The images inside the box */
+        .era-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* Start hidden */
+            animation: image-flit 12s ease-in-out infinite;
+        }
+
+        /* Keyframes for the "flit" animation */
+        @keyframes image-flit {
+            /* Fade-in for 0.5s (4.17% of 12s) */
+            0%   { opacity: 0; transform: translateY(10px); } 
+            4.17%  { opacity: 1; transform: translateY(0); }   
+            /* Hold for 3s (25% of 12s) */
+            29.17% { opacity: 1; transform: translateY(0); }   
+            /* Fade-out for 0.5s (4.17% of 12s) */
+            33.34% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 0; }                               
+        }
+
+        /* Set animation delays for the 3 images in each box */
+        /* --start-delay is a CSS variable set inline on the .era-box */
+        .era-box img:nth-child(1) {
+            animation-delay: calc(var(--start-delay, 0s) + 0s); 
+        }
+        .era-box img:nth-child(2) {
+            animation-delay: calc(var(--start-delay, 0s) + 4s);
+        }
+        .era-box img:nth-child(3) {
+            animation-delay: calc(var(--start-delay, 0s) + 8s);
+        }
+
+        /* Era label overlay */
+        .era-label {
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            z-index: 10;
+            /* Dark overlay with white text for readability on images */
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            color: white; /* Keep text white for overlay */
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px; /* pill shape */
+            font-weight: 600;
+            font-size: 0.875rem; /* 14px */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- End of New Styles --- */
+
+    </style>
+</head>
+<body class="text-slate-900 antialiased"> <!-- Default text to dark -->
+
+    <!-- Language Toggle Button -->
+    <button id="lang-toggle" class="absolute top-6 right-6 z-20 bg-white/70 backdrop-blur-sm text-slate-700 font-semibold py-2 px-4 rounded-full shadow border border-slate-200 hover:bg-white transition-all">
+        EN
+    </button>
+
+    <!-- Main container -->
+    <div class="flex flex-col items-center justify-center min-h-screen p-6 md:p-12 text-center">
+
+        <!-- App Title -->
+        <h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 title-gradient mb-4" data-key="title">
+            <!-- This text will be set by JS -->
+        </h1>
+
+        <!-- Tagline -->
+        <p class="text-2xl md:text-3xl text-slate-600 mb-12 max-w-2xl" data-key="tagline">
+            <!-- This text will be set by JS -->
+        </p>
+
+        <!-- Image Placeholder Grid -->
+        <div class="grid grid-cols-3 gap-3 md:gap-5 mb-16 max-w-3xl w-full">
+            
+            <!-- 1930 Box -->
+            <div class="era-box rounded-lg shadow-xl">
+                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1930+Pic+1" alt="1930 Example 1">
+                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1930+Pic+2" alt="1930 Example 2">
+                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1930+Pic+3" alt="1930 Example 3">
+                <div class="era-label" data-key="era1930">1930</div>
+            </div>
+
+            <!-- 1950 Box -->
+            <div class="era-box rounded-lg shadow-xl">
+                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1950+Pic+1" alt="1950 Example 1">
+                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1950+Pic+2" alt="1950 Example 2">
+                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1950+Pic+3" alt="1950 Example 3">
+                <div class="era-label" data-key="era1950">1950</div>
+            </div>
+            
+            <!-- 1970 Box -->
+            <div class="era-box rounded-lg shadow-xl">
+                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1970+Pic+1" alt="1970 Example 1">
+                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1970+Pic+2" alt="1970 Example 2">
+                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1970+Pic+3" alt="1970 Example 3">
+                <div class="era-label" data-key="era1970">1970</div>
+            </div>
+
+            <!-- 1980 Box -->
+            <div class="era-box rounded-lg shadow-xl">
+                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1980+Pic+1" alt="1980 Example 1">
+                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1980+Pic+2" alt="1980 Example 2">
+                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1980+Pic+3" alt="1980 Example 3">
+                <div class="era-label" data-key="era1980">1980</div>
+            </div>
+
+            <!-- 2000 Box -->
+            <div class="era-box rounded-lg shadow-xl">
+                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=2000+Pic+1" alt="2000 Example 1">
+                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=2000+Pic+2" alt="2000 Example 2">
+                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=2000+Pic+3" alt="2000 Example 3">
+                <div class="era-label" data-key="era2000">2000</div>
+            </div>
+
+            <!-- 2020s Box -->
+            <div class="era-box rounded-lg shadow-xl">
+                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=2020s+Pic+1" alt="2020s Example 1">
+                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=2020s+Pic+2" alt="2020s Example 2">
+                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=2020s+Pic+3" alt="2020s Example 3">
+                <div class="era-label" data-key="era2020">2020s</div>
+            </div>
+
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="flex flex-col md:flex-row gap-6 max-w-5xl w-full mb-16">
+            
+            <!-- Step 1 -->
+            <!-- Changed bg-slate-800 to bg-white, border-slate-700 to border-slate-200 -->
+            <div class="flex-1 bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-6xl font-black text-cyan-400 block mb-2">1.</span>
+                <h2 class="text-2xl font-bold mb-2 text-slate-900" data-key="step1Title">
+                    <!-- This text will be set by JS -->
+                </h2>
+                <!-- Changed text-slate-400 to text-slate-600 -->
+                <p class="text-slate-600" data-key="step1Text">
+                    <!-- This text will be set by JS -->
+                </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex-1 bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-6xl font-black text-cyan-400 block mb-2">2.</span>
+                <h2 class="text-2xl font-bold mb-2 text-slate-900" data-key="step2Title">
+                    <!-- This text will be set by JS -->
+                </h2>
+                <p class="text-slate-600" data-key="step2Text">
+                    <!-- This text will be set by JS -->
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex-1 bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-6xl font-black text-cyan-400 block mb-2">3.</span>
+                <h2 class="text-2xl font-bold mb-2 text-slate-900" data-key="step3Title">
+                    <!-- This text will be set by JS -->
+                </h2>
+                <p class="text-slate-600" data-key="step3Text">
+                    <!-- This text will be set by JS -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Call to Action (Pulsing) -->
+        <div class="w-full max-w-md">
+            <!-- This pink button still looks great on a light background -->
+            <div class="bg-cyan-400 text-white font-bold text-3xl py-5 px-10 rounded-full shadow-2xl animate-pulse" data-key="cta">
+                <!-- This text will be set by JS -->
+            </div>
+        </div>
+
+        <!-- Built by Google attribution -->
+        <div class="mt-12 flex items-center justify-center gap-2">
+            <span class="text-sm text-slate-500" data-key="builtWith"></span>
+            <!-- Google wordmark logo -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5">
+            <span class="text-sm text-slate-500">Montreal</span>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Start Language Translation Script ---
+
+        const translations = {
+            fr: {
+                title: "Passé Recomposé",
+                tagline: "Voyez-vous à six époques différentes.",
+                era1930: "1930",
+                era1950: "1950",
+                era1970: "1970",
+                era1980: "1980",
+                era2000: "2000",
+                era2020: "Années 2020",
+                step1Title: "Scannez le code",
+                step1Text: "Utilisez la caméra de votre téléphone pour scanner le code QR à côté de cet écran.",
+                step2Title: "Prenez un selfie",
+                step2Text: "L'application web s'ouvrira. Suivez les instructions pour prendre une photo.",
+                step3Title: "Recevez vos photos",
+                step3Text: "Recevez 6 images uniques de vous dans le passé et téléchargez vos favorites.",
+                cta: "Scannez le code QR pour commencer !",
+                builtWith: "Créé avec ❤️ par",
+                toggle: "EN"
+            },
+            en: {
+                title: "Past Forward",
+                tagline: "See yourself in six different eras.",
+                era1930: "1930",
+                era1950: "1950",
+                era1970: "1970",
+                era1980: "1980",
+                era2000: "2000",
+                era2020: "2020s",
+                step1Title: "Scan the Code",
+                step1Text: "Use your phone's camera to scan the QR code next to this screen.",
+                step2Title: "Take a Selfie",
+                step2Text: "The web app will open on your phone. Just follow the prompt to take one photo.",
+                step3Title: "Get Your Photos",
+                step3Text: "Receive 6 unique images of yourself from the past and download your favorites.",
+                cta: "Scan the QR Code to Start!",
+                builtWith: "Built with ❤️ by",
+                toggle: "FR"
+            }
+        };
+
+        let currentLang = 'fr'; // Default language
+        const langToggleButton = document.getElementById('lang-toggle');
+
+        function setLanguage(lang) {
+            // Set the lang attribute on the HTML tag
+            document.documentElement.lang = lang;
+            
+            // Set the toggle button text
+            langToggleButton.textContent = translations[lang].toggle;
+            
+            // Find all elements with a data-key and update their text
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.dataset.key;
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // --- End Language Translation Script ---
+
+
+        // Add script to randomize the animation start delay for each box
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the initial language
+            setLanguage(currentLang);
+
+            // Add click listener for the toggle button
+            langToggleButton.addEventListener('click', () => {
+                currentLang = currentLang === 'fr' ? 'en' : 'fr';
+                setLanguage(currentLang);
+            });
+
+            // Select all the era boxes
+            const eraBoxes = document.querySelectorAll('.era-box');
+            
+            eraBoxes.forEach(box => {
+                // Generate a random delay between 0 and 5 seconds
+                const randomDelay = Math.random() * 5; 
+                
+                // Set the --start-delay CSS variable on each box
+                // This will be picked up by the calc() function in the CSS
+                box.style.setProperty('--start-delay', `${randomDelay}s`);
+            });
+        });
+    </script>
+
+</body>
+</html>
