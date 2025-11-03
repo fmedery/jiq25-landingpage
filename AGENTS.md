@@ -15,3 +15,7 @@ This is a single-page web application built with vanilla HTML, CSS, and JavaScri
 
 - **Dependencies**: All dependencies are loaded via CDNs in the `index.html` file. There is no package manager or build process.
 - **Styling**: Styling is done with Tailwind CSS and a few custom CSS rules in the `<style>` tag of the `index.html` file.
+
+## Assets
+
+- **Google Logo**: The Google logo is the official logo and should not be replaced.

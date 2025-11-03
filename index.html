@@ -101,84 +101,89 @@
 <body class="text-slate-900 antialiased"> <!-- Default text to dark -->
 
     <!-- Language Toggle Button -->
-    <button id="lang-toggle" class="absolute top-6 right-6 z-20 bg-white/70 backdrop-blur-sm text-slate-700 font-semibold py-2 px-4 rounded-full shadow border border-slate-200 hover:bg-white transition-all">
+    <button id="lang-toggle" class="absolute top-4 right-4 z-20 bg-white/70 backdrop-blur-sm text-slate-700 font-semibold py-2 px-4 rounded-full shadow border border-slate-200 hover:bg-white transition-all">
         EN
     </button>
 
     <!-- Main container -->
-    <div class="flex flex-col items-center justify-center min-h-screen p-6 md:p-12 text-center">
+    <!-- Reduced vertical padding from p-6 md:p-12 to py-8 px-6 -->
+    <div class="flex flex-col items-center justify-center min-h-screen py-8 px-6 text-center">
 
         <!-- App Title -->
-        <h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 title-gradient mb-4" data-key="title">
+        <!-- Reduced bottom margin from mb-4 to mb-2 -->
+        <h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 title-gradient mb-2" data-key="title">
             <!-- This text will be set by JS -->
         </h1>
 
         <!-- Tagline -->
-        <p class="text-2xl md:text-3xl text-slate-600 mb-12 max-w-2xl" data-key="tagline">
+        <!-- Reduced font size and bottom margin -->
+        <p class="text-xl md:text-2xl text-slate-600 mb-8 max-w-2xl" data-key="tagline">
             <!-- This text will be set by JS -->
         </p>
 
         <!-- Image Placeholder Grid -->
-        <div class="grid grid-cols-3 gap-3 md:gap-5 mb-16 max-w-3xl w-full">
+        <!-- Reduced gap and bottom margin -->
+        <div class="grid grid-cols-3 gap-2 md:gap-4 mb-8 max-w-3xl w-full">
             
-            <!-- 1930 Box -->
+            <!-- 1930s Box -->
             <div class="era-box rounded-lg shadow-xl">
-                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1930+Pic+1" alt="1930 Example 1">
-                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1930+Pic+2" alt="1930 Example 2">
-                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1930+Pic+3" alt="1930 Example 3">
-                <div class="era-label" data-key="era1930">1930</div>
+                <img src="assets/1930/1930_1_Chuck.png" alt="1930s Example 1">
+                <img src="assets/1930/1930_2_TK.png" alt="1930s Example 2">
+                <img src="assets/1930/1930_3_Sun.png" alt="1930s Example 3">
+                <div class="era-label" data-key="era1930">1930s</div>
             </div>
 
-            <!-- 1950 Box -->
+            <!-- 1950s Box -->
             <div class="era-box rounded-lg shadow-xl">
-                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1950+Pic+1" alt="1950 Example 1">
-                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1950+Pic+2" alt="1950 Example 2">
-                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1950+Pic+3" alt="1950 Example 3">
-                <div class="era-label" data-key="era1950">1950</div>
+                <img src="assets/1950/1950_1_Chuck.png" alt="1950s Example 1">
+                <img src="assets/1950/1950_2_TK.png" alt="1950s Example 2">
+                <img src="assets/1950/1950_3_Sun.png" alt="1950s Example 3">
+                <div class="era-label" data-key="era1950">1950s</div>
             </div>
             
-            <!-- 1970 Box -->
+            <!-- 1970s Box -->
             <div class="era-box rounded-lg shadow-xl">
-                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1970+Pic+1" alt="1970 Example 1">
-                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1970+Pic+2" alt="1970 Example 2">
-                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1970+Pic+3" alt="1970 Example 3">
-                <div class="era-label" data-key="era1970">1970</div>
+                <img src="assets/1970/1970_1_Chuck.png" alt="1970s Example 1">
+                <img src="assets/1970/1970_2_TK.png" alt="1970s Example 2">
+                <img src="assets/1970/1970_3_Sun.png" alt="1970s Example 3">
+                <div class="era-label" data-key="era1970">1970s</div>
             </div>
 
-            <!-- 1980 Box -->
+            <!-- 1980s Box -->
             <div class="era-box rounded-lg shadow-xl">
-                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=1980+Pic+1" alt="1980 Example 1">
-                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=1980+Pic+2" alt="1980 Example 2">
-                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=1980+Pic+3" alt="1980 Example 3">
-                <div class="era-label" data-key="era1980">1980</div>
+                <img src="assets/1980/1980_1_Chuck.png" alt="1980s Example 1">
+                <img src="assets/1980/1980_2_TK.png" alt="1980s Example 2">
+                <img src="assets/1980/1980_3_Sun.png" alt="1980s Example 3">
+                <div class="era-label" data-key="era1980">1980s</div>
             </div>
 
-            <!-- 2000 Box -->
+            <!-- 1990s Box -->
             <div class="era-box rounded-lg shadow-xl">
-                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=2000+Pic+1" alt="2000 Example 1">
-                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=2000+Pic+2" alt="2000 Example 2">
-                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=2000+Pic+3" alt="2000 Example 3">
-                <div class="era-label" data-key="era2000">2000</div>
+                <img src="assets/1990/1990_1_chuck.jpg" alt="1990s Example 1">
+                <img src="assets/1990/1990_2_TK.png" alt="1990s Example 2">
+                <img src="assets/1990/1990_3_Sun.png" alt="1990s Example 3">
+                <div class="era-label" data-key="era1990">1990s</div>
             </div>
 
-            <!-- 2020s Box -->
+            <!-- 2000s Box -->
             <div class="era-box rounded-lg shadow-xl">
-                <img src="https://placehold.co/400x400/1e293b/94a3b8?text=2020s+Pic+1" alt="2020s Example 1">
-                <img src="https://placehold.co/400x400/7f1d1d/fecaca?text=2020s+Pic+2" alt="2020s Example 2">
-                <img src="https://placehold.co/400x400/064e3b/a7f3d0?text=2020s+Pic+3" alt="2020s Example 3">
-                <div class="era-label" data-key="era2020">2020s</div>
+                <img src="assets/2000/2020_1_Chuck.png" alt="2000s Example 1">
+                <img src="assets/2000/2000_2_TK.png" alt="2000s Example 2">
+                <img src="assets/2000/2020_3_Sun.png" alt="2000s Example 3">
+                <div class="era-label" data-key="era2000">2000s</div>
             </div>
 
         </div>
 
         <!-- How It Works Section -->
-        <div class="flex flex-col md:flex-row gap-6 max-w-5xl w-full mb-16">
+        <!-- Reduced gap and bottom margin -->
+        <div class="flex flex-col md:flex-row gap-4 max-w-5xl w-full mb-8">
             
             <!-- Step 1 -->
-            <!-- Changed bg-slate-800 to bg-white, border-slate-700 to border-slate-200 -->
-            <div class="flex-1 bg-white p-6 rounded-xl shadow-lg border border-slate-200">
-                <span class="text-6xl font-black text-cyan-400 block mb-2">1.</span>
-                <h2 class="text-2xl font-bold mb-2 text-slate-900" data-key="step1Title">
+            <!-- Reduced padding, step number size, and title size -->
+            <div class="flex-1 bg-white p-4 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-5xl font-black text-cyan-400 block mb-1">1.</span>
+                <h2 class="text-xl font-bold mb-1 text-slate-900" data-key="step1Title">
                     <!-- This text will be set by JS -->
                 </h2>
                 <!-- Changed text-slate-400 to text-slate-600 -->
@@ -188,9 +193,10 @@
             </div>
 
             <!-- Step 2 -->
-            <div class="flex-1 bg-white p-6 rounded-xl shadow-lg border border-slate-200">
-                <span class="text-6xl font-black text-cyan-400 block mb-2">2.</span>
-                <h2 class="text-2xl font-bold mb-2 text-slate-900" data-key="step2Title">
+            <!-- Reduced padding, step number size, and title size -->
+            <div class="flex-1 bg-white p-4 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-5xl font-black text-cyan-400 block mb-1">2.</span>
+                <h2 class="text-xl font-bold mb-1 text-slate-900" data-key="step2Title">
                     <!-- This text will be set by JS -->
                 </h2>
                 <p class="text-slate-600" data-key="step2Text">
@@ -199,9 +205,10 @@
             </div>
 
             <!-- Step 3 -->
-            <div class="flex-1 bg-white p-6 rounded-xl shadow-lg border border-slate-200">
-                <span class="text-6xl font-black text-cyan-400 block mb-2">3.</span>
-                <h2 class="text-2xl font-bold mb-2 text-slate-900" data-key="step3Title">
+            <!-- Reduced padding, step number size, and title size -->
+            <div class="flex-1 bg-white p-4 rounded-xl shadow-lg border border-slate-200">
+                <span class="text-5xl font-black text-cyan-400 block mb-1">3.</span>
+                <h2 class="text-xl font-bold mb-1 text-slate-900" data-key="step3Title">
                     <!-- This text will be set by JS -->
                 </h2>
                 <p class="text-slate-600" data-key="step3Text">
@@ -210,19 +217,26 @@
             </div>
         </div>
 
+        <!-- Fake QR Code Image -->
+        <!-- Reduced size and bottom margin -->
+        <div class="mb-6">
+            <img src="assets/qrcode.png" alt="QR Code" class="w-48 h-48 rounded-lg shadow-lg mx-auto border-4 border-white">
+        </div>
+
         <!-- Call to Action (Pulsing) -->
         <div class="w-full max-w-md">
-            <!-- This pink button still looks great on a light background -->
-            <div class="bg-cyan-400 text-white font-bold text-3xl py-5 px-10 rounded-full shadow-2xl animate-pulse" data-key="cta">
+            <!-- Reduced font size and padding -->
+            <div class="bg-cyan-400 text-white font-bold text-2xl py-4 px-8 rounded-full shadow-2xl animate-pulse" data-key="cta">
                 <!-- This text will be set by JS -->
             </div>
         </div>
 
         <!-- Built by Google attribution -->
-        <div class="mt-12 flex items-center justify-center gap-2">
+        <!-- Reduced top margin -->
+        <div class="mt-8 flex items-center justify-center gap-2">
             <span class="text-sm text-slate-500" data-key="builtWith"></span>
             <!-- Google wordmark logo -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-5">
+            <img src="assets/google-logo.svg" alt="Google" class="h-5">
             <span class="text-sm text-slate-500">Montreal</span>
         </div>
 
@@ -235,14 +249,14 @@
             fr: {
                 title: "Passé Recomposé",
                 tagline: "Voyez-vous à six époques différentes.",
-                era1930: "1930",
-                era1950: "1950",
-                era1970: "1970",
-                era1980: "1980",
-                era2000: "2000",
-                era2020: "Années 2020",
+                era1930: "Années 30",
+                era1950: "Années 50",
+                era1970: "Années 70",
+                era1980: "Années 80",
+                era1990: "Années 90",
+                era2000: "Années 2000",
                 step1Title: "Scannez le code",
-                step1Text: "Utilisez la caméra de votre téléphone pour scanner le code QR à côté de cet écran.",
+                step1Text: "Utilisez la caméra de votre téléphone pour scanner le code QR ci-dessous.",
                 step2Title: "Prenez un selfie",
                 step2Text: "L'application web s'ouvrira. Suivez les instructions pour prendre une photo.",
                 step3Title: "Recevez vos photos",
@@ -254,14 +268,14 @@
             en: {
                 title: "Past Forward",
                 tagline: "See yourself in six different eras.",
-                era1930: "1930",
-                era1950: "1950",
-                era1970: "1970",
-                era1980: "1980",
-                era2000: "2000",
-                era2020: "2020s",
+                era1930: "1930s",
+                era1950: "1950s",
+                era1970: "1970s",
+                era1980: "1980s",
+                era1990: "1990s",
+                era2000: "2000s",
                 step1Title: "Scan the Code",
-                step1Text: "Use your phone's camera to scan the QR code next to this screen.",
+                step1Text: "Use your phone's camera to scan the QR code below.",
                 step2Title: "Take a Selfie",
                 step2Text: "The web app will open on your phone. Just follow the prompt to take one photo.",
                 step3Title: "Get Your Photos",
@@ -321,3 +335,5 @@
 
 </body>
 </html>
+
+
